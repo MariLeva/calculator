@@ -15,40 +15,39 @@
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/tv_result_text"
-            app:layout_constraintBottom_toTopOf="@+id/include" />
 
         <TextView
             android:id="@+id/tv_A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/tv_text"
-            app:layout_constraintBottom_toTopOf="@+id/tv_result" />
+            android:maxLength="10"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tv_text" />
 
         <TextView
-            android:id="@+id/tv_B"
+            android:id="@+id/tv_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/tv_text"
-            app:layout_constraintBottom_toTopOf="@+id/tv_A" />
+            android:maxLength="10"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tv_result_text" />
 
         <include
             android:id="@+id/include"
             layout="@layout/keyboard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
