@@ -1,5 +1,6 @@
 package ru.geekbrains.calculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -39,6 +40,23 @@ public class MainActivity extends AppCompatActivity {
         initView();
         setListenet();
     }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+        calculator.setVar_a((String) tv_A.getText());
+        calculator.setVar_b((String) tv_result.getText());
+        instanceState.putSerializable("calculator", calculator);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+        calculator = (Calculator) instanceState.getSerializable("calculator");
+        tv_A.setText((String.valueOf(calculator.getVar_a())));
+        tv_result.setText((String.valueOf(calculator.getVar_b())));
+    }
+
 
     private void initView() {
         tv_result = findViewById(R.id.tv_result);

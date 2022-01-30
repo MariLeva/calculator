@@ -1,7 +1,27 @@
 package ru.geekbrains.calculator;
 
-public class Calculator {
+import java.io.Serializable;
+
+public class Calculator implements Serializable{
     private String operation = "";
+    private String var_a = "";
+    private String var_b = "";
+
+    public String getVar_a() {
+        return var_a;
+    }
+
+    public void setVar_a(String var_a) {
+        this.var_a = var_a;
+    }
+
+    public String getVar_b() {
+        return var_b;
+    }
+
+    public void setVar_b(String var_b) {
+        this.var_b = var_b;
+    }
 
     public void setOperation(String operation) {
         this.operation = operation;
