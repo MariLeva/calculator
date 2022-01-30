@@ -10,18 +10,27 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private TextView tv_result;
     private TextView tv_A;
-    private Button btnOne; private Button btnTwo; private Button btnThree;
-    private Button btnFour; private Button btnFive; private Button btnSix;
-    private Button btnSeven; private Button btnEight; private Button btnNine;
-    private Button btnZero; private Button btnCE; private Button btnC;
-    private Button btnAdd; private Button btnSub; private Button btnMul;
-    private Button btnDiv; private Button btnEquals; private Button btnPoint;
+    private Button btnOne;
+    private Button btnTwo;
+    private Button btnThree;
+    private Button btnFour;
+    private Button btnFive;
+    private Button btnSix;
+    private Button btnSeven;
+    private Button btnEight;
+    private Button btnNine;
+    private Button btnZero;
+    private Button btnCE;
+    private Button btnC;
+    private Button btnAdd;
+    private Button btnSub;
+    private Button btnMul;
+    private Button btnDiv;
+    private Button btnEquals;
+    private Button btnPoint;
     private Button btnPercent;
-    private String operation = "";
 
-    private float result = 0;
-    private float var_a = 0;
-    private float var_b = 0;
+    private Calculator calculator = new Calculator();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         btnPercent = findViewById(R.id.button_percent);
     }
 
-    private void setListenet(){
+    private void setListenet() {
         btnOne.setOnClickListener(listener);
         btnTwo.setOnClickListener(listener);
         btnThree.setOnClickListener(listener);
@@ -83,109 +92,96 @@ public class MainActivity extends AppCompatActivity {
 
             switch (view.getId()) {
                 case (R.id.button1): {
-                    tv_result.setText(tv_result.getText() + "1");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnOne.getText()));
                     break;
                 }
                 case (R.id.button2): {
-                    tv_result.setText(tv_result.getText() + "2");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnTwo.getText()));
                     break;
                 }
                 case (R.id.button3): {
-                    tv_result.setText(tv_result.getText() + "3");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnThree.getText()));
                     break;
                 }
                 case (R.id.button4): {
-                    tv_result.setText(tv_result.getText() + "4");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnFour.getText()));
                     break;
                 }
                 case (R.id.button5): {
-                    tv_result.setText(tv_result.getText() + "5");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnFive.getText()));
                     break;
                 }
                 case (R.id.button6): {
-                    tv_result.setText(tv_result.getText() + "6");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnSix.getText()));
                     break;
                 }
                 case (R.id.button7): {
-                    tv_result.setText(tv_result.getText() + "7");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnSeven.getText()));
                     break;
                 }
                 case (R.id.button8): {
-                    tv_result.setText(tv_result.getText() + "8");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnEight.getText()));
                     break;
                 }
                 case (R.id.button9): {
-                    tv_result.setText(tv_result.getText() + "9");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnNine.getText()));
                     break;
                 }
                 case (R.id.button0): {
-                    tv_result.setText(tv_result.getText() + "0");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnZero.getText()));
                     break;
                 }
                 case (R.id.button_point): {
-                    tv_result.setText(tv_result.getText() + ".");
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnPoint.getText()));
                     break;
                 }
                 case (R.id.button_C): {
                     tv_result.setText("");
+                    tv_A.setText("");
                     break;
                 }
                 case (R.id.button_CE): {
                     tv_result.setText("");
-                    tv_A.setText("");
-                    operation = "";
                     break;
                 }
                 case (R.id.button_add): {
-                    tv_A.setText(tv_result.getText());
-                    tv_result.setText("");
-                    operation = "add";
+                    setA_cleanResult();
+                    calculator.setOperation((String) btnAdd.getText());
                     break;
                 }
                 case (R.id.button_sub): {
-                    tv_A.setText(tv_result.getText());
-                    tv_result.setText("");
-                    operation = "sub";
+                    setA_cleanResult();
+                    calculator.setOperation((String) btnSub.getText());
                     break;
                 }
                 case (R.id.button_mul): {
-                    tv_A.setText(tv_result.getText());
-                    tv_result.setText("");
-                    operation = "mul";
+                    setA_cleanResult();
+                    calculator.setOperation((String) btnMul.getText());
                     break;
                 }
                 case (R.id.button_div): {
-                    tv_A.setText(tv_result.getText());
-                    tv_result.setText("");
-                    operation = "div";
+                    setA_cleanResult();
+                    calculator.setOperation((String) btnDiv.getText());
                     break;
                 }
                 case (R.id.button_percent): {
-                    tv_A.setText(tv_result.getText());
-                    tv_result.setText("");
-                    operation = "percent";
+                    tv_result.setText(calculator.percent(Float.parseFloat((String) tv_A.getText()), Float.parseFloat((String) tv_result.getText())));
+                    tv_A.setText("");
                     break;
                 }
-                 case (R.id.button_equals): {
-                    if (operation.equalsIgnoreCase("add")){
-                        result = Float.valueOf(String.valueOf(tv_A.getText())) + Float.valueOf(String.valueOf(tv_result.getText()));
-                        tv_result.setText(Float.toString(result));
-                    } else if (operation.equalsIgnoreCase("sub")){
-                        result = Float.valueOf(String.valueOf(tv_A.getText())) - Float.valueOf(String.valueOf(tv_result.getText()));
-                        tv_result.setText(Float.toString(result));
-                    } else if (operation.equalsIgnoreCase("mul")){
-                        result = Float.valueOf(String.valueOf(tv_A.getText())) * Float.valueOf(String.valueOf(tv_result.getText()));
-                        tv_result.setText(Float.toString(result));
-                    } else if (operation.equalsIgnoreCase("div")){
-                        result = Float.valueOf(String.valueOf(tv_A.getText())) / Float.valueOf(String.valueOf(tv_result.getText()));
-                        tv_result.setText(Float.toString(result));
-                    } else if (operation.equalsIgnoreCase("percent")){
-                        result = Float.valueOf(String.valueOf(tv_A.getText())) * Float.valueOf(String.valueOf(tv_result.getText())) / 100;
-                        tv_result.setText(Float.toString(result));}
-
+                case (R.id.button_equals): {
+                    tv_result.setText(calculator.equals(Float.parseFloat((String) tv_A.getText()), Float.parseFloat((String) tv_result.getText())));
+                    tv_A.setText("");
                     break;
                 }
+                default:
+                    throw new IllegalStateException("Unexpected value: " + view.getId());
             }
         }
     };
+
+    public void setA_cleanResult() {
+        tv_A.setText(tv_result.getText());
+        tv_result.setText("");
+    }
 }
