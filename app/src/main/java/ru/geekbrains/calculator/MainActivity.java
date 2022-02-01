@@ -107,50 +107,20 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            Button btn = (Button) view;
             switch (view.getId()) {
-                case (R.id.button1): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnOne.getText()));
-                    break;
-                }
-                case (R.id.button2): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnTwo.getText()));
-                    break;
-                }
-                case (R.id.button3): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnThree.getText()));
-                    break;
-                }
-                case (R.id.button4): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnFour.getText()));
-                    break;
-                }
-                case (R.id.button5): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnFive.getText()));
-                    break;
-                }
-                case (R.id.button6): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnSix.getText()));
-                    break;
-                }
-                case (R.id.button7): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnSeven.getText()));
-                    break;
-                }
-                case (R.id.button8): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnEight.getText()));
-                    break;
-                }
-                case (R.id.button9): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnNine.getText()));
-                    break;
-                }
-                case (R.id.button0): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnZero.getText()));
-                    break;
-                }
+                case (R.id.button1):
+                case (R.id.button2):
+                case (R.id.button3):
+                case (R.id.button4):
+                case (R.id.button5):
+                case (R.id.button6):
+                case (R.id.button7):
+                case (R.id.button8):
+                case (R.id.button9):
+                case (R.id.button0):
                 case (R.id.button_point): {
-                    tv_result.setText(String.format("%s%s", tv_result.getText(), btnPoint.getText()));
+                    tv_result.setText(String.format("%s%s", tv_result.getText(), btn.getText()));
                     break;
                 }
                 case (R.id.button_C): {
@@ -162,24 +132,12 @@ public class MainActivity extends AppCompatActivity {
                     tv_result.setText("");
                     break;
                 }
-                case (R.id.button_add): {
-                    setA_cleanResult();
-                    calculator.setOperation((String) btnAdd.getText());
-                    break;
-                }
-                case (R.id.button_sub): {
-                    setA_cleanResult();
-                    calculator.setOperation((String) btnSub.getText());
-                    break;
-                }
-                case (R.id.button_mul): {
-                    setA_cleanResult();
-                    calculator.setOperation((String) btnMul.getText());
-                    break;
-                }
+                case (R.id.button_add):
+                case (R.id.button_sub):
+                case (R.id.button_mul):
                 case (R.id.button_div): {
                     setA_cleanResult();
-                    calculator.setOperation((String) btnDiv.getText());
+                    calculator.setOperation((String) btn.getText());
                     break;
                 }
                 case (R.id.button_percent): {
