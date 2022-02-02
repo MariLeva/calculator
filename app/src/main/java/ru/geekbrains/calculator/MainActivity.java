@@ -61,16 +61,16 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         tv_result = findViewById(R.id.tv_result);
         tv_A = findViewById(R.id.tv_A);
-        btnOne = findViewById(R.id.button1);
-        btnTwo = findViewById(R.id.button2);
-        btnThree = findViewById(R.id.button3);
-        btnFour = findViewById(R.id.button4);
-        btnFive = findViewById(R.id.button5);
-        btnSix = findViewById(R.id.button6);
-        btnSeven = findViewById(R.id.button7);
-        btnEight = findViewById(R.id.button8);
-        btnNine = findViewById(R.id.button9);
-        btnZero = findViewById(R.id.button0);
+        btnOne = findViewById(R.id.buttonOne);
+        btnTwo = findViewById(R.id.buttonTwo);
+        btnThree = findViewById(R.id.buttonThree);
+        btnFour = findViewById(R.id.buttonFour);
+        btnFive = findViewById(R.id.buttonFive);
+        btnSix = findViewById(R.id.buttonSix);
+        btnSeven = findViewById(R.id.buttonSeven);
+        btnEight = findViewById(R.id.buttonEight);
+        btnNine = findViewById(R.id.buttonNine);
+        btnZero = findViewById(R.id.buttonZero);
         btnC = findViewById(R.id.button_C);
         btnCE = findViewById(R.id.button_CE);
         btnAdd = findViewById(R.id.button_add);
@@ -109,16 +109,16 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             Button btn = (Button) view;
             switch (view.getId()) {
-                case (R.id.button1):
-                case (R.id.button2):
-                case (R.id.button3):
-                case (R.id.button4):
-                case (R.id.button5):
-                case (R.id.button6):
-                case (R.id.button7):
-                case (R.id.button8):
-                case (R.id.button9):
-                case (R.id.button0):
+                case (R.id.buttonOne):
+                case (R.id.buttonTwo):
+                case (R.id.buttonThree):
+                case (R.id.buttonFour):
+                case (R.id.buttonFive):
+                case (R.id.buttonSix):
+                case (R.id.buttonSeven):
+                case (R.id.buttonEight):
+                case (R.id.buttonNine):
+                case (R.id.buttonZero):
                 case (R.id.button_point): {
                     tv_result.setText(String.format("%s%s", tv_result.getText(), btn.getText()));
                     break;
