@@ -25,23 +25,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="10"
             android:textAlignment="textEnd"
-            android:textColor="@color/white"
             android:textSize="@dimen/tv_text" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="10"
-            android:textAlignment="textEnd"
-            android:textColor="@color/white"
-            android:textSize="@dimen/tv_result_text" />
+            android:textAlignment="textEnd"/>
 
         <include
             android:id="@+id/include"

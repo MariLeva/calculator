@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="button_text">42sp</dimen>
-    <dimen name="tv_result_text">42sp</dimen>
+    <dimen name="size_text">42sp</dimen>
     <dimen name="tv_text">36sp</dimen>
     <dimen name="button_border">4dp</dimen>
+    <dimen name="button_radius">20dp</dimen>
 </resources>

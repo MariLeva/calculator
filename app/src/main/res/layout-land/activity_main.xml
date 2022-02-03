@@ -42,8 +42,7 @@
                 android:layout_height="wrap_content"
                 android:maxLength="10"
                 android:textAlignment="textEnd"
-                android:textColor="@color/white"
-                android:textSize="@dimen/tv_result_text" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <include
