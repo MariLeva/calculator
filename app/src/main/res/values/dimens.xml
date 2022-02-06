@@ -4,4 +4,5 @@
     <dimen name="tv_text">36sp</dimen>
     <dimen name="button_border">4dp</dimen>
     <dimen name="button_radius">20dp</dimen>
+    <dimen name="rb_size_text">30sp</dimen>
 </resources>

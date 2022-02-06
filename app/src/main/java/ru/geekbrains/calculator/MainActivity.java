@@ -3,6 +3,8 @@ package ru.geekbrains.calculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnEquals;
     private Button btnPoint;
     private Button btnPercent;
+    private Button btnTheme;
 
     private Calculator calculator = new Calculator();
 
@@ -80,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         btnPoint = findViewById(R.id.button_point);
         btnEquals = findViewById(R.id.button_equals);
         btnPercent = findViewById(R.id.button_percent);
+        btnTheme = findViewById(R.id.button_theme);
     }
 
     private void setListenet() {
@@ -102,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         btnPoint.setOnClickListener(listener);
         btnPercent.setOnClickListener(listener);
         btnEquals.setOnClickListener(listener);
+        btnTheme.setOnClickListener(listener);
     }
 
     View.OnClickListener listener = new View.OnClickListener() {
@@ -150,6 +155,9 @@ public class MainActivity extends AppCompatActivity {
                     tv_A.setText("");
                     break;
                 }
+                case (R.id.button_theme):{
+
+                }
                 default:
                     throw new IllegalStateException("Unexpected value: " + view.getId());
             }
@@ -160,4 +168,5 @@ public class MainActivity extends AppCompatActivity {
         tv_A.setText(tv_result.getText());
         tv_result.setText("");
     }
+
 }

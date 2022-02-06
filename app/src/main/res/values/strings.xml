@@ -19,4 +19,10 @@
     <string name="button0">0</string>
     <string name="button_point">.</string>
     <string name="button_equals">=</string>
+    <string name="theme1">default</string>
+    <string name="theme2">blue</string>
+    <string name="theme3">purple</string>
+    <string name="theme4">green</string>
+    <string name="tv_theme">Choosing a theme:</string>
+    <string name="button_theme">Set theme</string>
 </resources>

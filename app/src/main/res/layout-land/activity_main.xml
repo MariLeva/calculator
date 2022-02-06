@@ -43,6 +43,31 @@
                 android:maxLength="10"
                 android:textAlignment="textEnd"
                 android:textColor="@color/white" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_theme1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/theme1"
+                tools:ignore="MissingConstraints" />
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_theme2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/theme2"
+                tools:ignore="MissingConstraints" />
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_theme3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/theme3"
+                tools:ignore="MissingConstraints" />
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_theme4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/theme4"
+                tools:ignore="MissingConstraints" />
         </LinearLayout>
 
         <include
