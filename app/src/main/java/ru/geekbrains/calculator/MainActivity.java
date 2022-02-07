@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 }
                 case (R.id.button_theme):{
-
+                    startActivity(new Intent(MainActivity.this, Theme.class));
                 }
                 default:
                     throw new IllegalStateException("Unexpected value: " + view.getId());

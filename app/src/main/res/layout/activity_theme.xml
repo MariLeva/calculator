@@ -28,24 +28,24 @@
             android:layout_height="match_parent"
             android:text="@string/tv_theme"/>
         <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rb_theme1"
+            android:id="@+id/rb_themeDefault"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/theme1"/>
         <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rb_theme2"
+            android:id="@+id/rb_themeBlue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/blue_100"
             android:text="@string/theme2" />
         <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rb_theme3"
+            android:id="@+id/rb_themePurple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/purple_100"
             android:text="@string/theme3" />
         <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rb_theme4"
+            android:id="@+id/rb_themeGreen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/green_100"
