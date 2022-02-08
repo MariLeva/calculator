@@ -1,9 +1,11 @@
 package ru.geekbrains.calculator;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -36,13 +38,19 @@ public class MainActivity extends AppCompatActivity {
 
     private Calculator calculator = new Calculator();
 
+    public static String PREF_KEY_THEME = "pref_key_theme";
+    public static String PREF_NAME = "pref_name";
+    public static int KEY_RESULT = 999;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getAppTheme());
         setContentView(R.layout.activity_main);
         initView();
-        setListenet();
+        setListener();
     }
+
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle instanceState) {
@@ -86,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         btnTheme = findViewById(R.id.button_theme);
     }
 
-    private void setListenet() {
+    private void setListener() {
         btnOne.setOnClickListener(listener);
         btnTwo.setOnClickListener(listener);
         btnThree.setOnClickListener(listener);
@@ -156,7 +164,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 }
                 case (R.id.button_theme):{
-                    startActivity(new Intent(MainActivity.this, Theme.class));
+                    startActivityForResult(new Intent(MainActivity.this, Theme.class),KEY_RESULT);
+                    break;
                 }
                 default:
                     throw new IllegalStateException("Unexpected value: " + view.getId());
@@ -164,9 +173,22 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK){
+            recreate();
+        }
+    }
+
     public void setA_cleanResult() {
         tv_A.setText(tv_result.getText());
         tv_result.setText("");
+    }
+
+    public int getAppTheme() {
+        SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        return sharedPref.getInt(PREF_KEY_THEME,R.style.MyStyle);
     }
 
 }

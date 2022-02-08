@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Calculator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/purp_500</item>
+        <item name="colorPrimaryVariant">@color/purp_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -22,7 +22,6 @@
         <item name="android:insetRight">@dimen/button_border</item>
         <item name="android:insetBottom">@dimen/button_border</item>
         <item name="cornerRadius">@dimen/button_radius</item>
-        <item name="backgroundTint">@color/purple_700</item>
     </style>
 
     <style name="rb_theme" parent="Widget.AppCompat.CompoundButton.RadioButton">
@@ -35,7 +34,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="myThemeBlue" parent="Theme.Calculator">
+    <style name="myThemeBlue" parent="MyStyle">
         <item name="android:navigationBarColor">@color/blue_500</item>
         <item name="colorPrimary">@color/blue_600</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -53,7 +52,7 @@
         <item name="android:statusBarColor">@color/blue_800</item>
     </style>
 
-    <style name="myThemeGreen" parent="Theme.Calculator">
+    <style name="myThemeGreen" parent="MyStyle">
         <item name="android:navigationBarColor">@color/green_500</item>
         <item name="colorPrimary">@color/green_600</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -71,7 +70,7 @@
         <item name="android:statusBarColor">@color/green_800</item>
     </style>
 
-    <style name="myThemePurple" parent="Theme.Calculator">
+    <style name="myThemePurple" parent="MyStyle">
         <item name="android:navigationBarColor">@color/purple_500</item>
         <item name="colorPrimary">@color/purple_600</item>
         <item name="colorOnPrimary">@color/white</item>
