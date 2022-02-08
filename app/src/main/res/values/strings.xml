@@ -25,4 +25,6 @@
     <string name="theme4">green</string>
     <string name="tv_theme">Choosing a theme:</string>
     <string name="button_theme">Set theme</string>
+    <string name="button_start">Start calculator</string>
+
 </resources>
